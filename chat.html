@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat with Buddies</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #F7CE4D; /* Set background color */
+            color: black; /* Set font color */
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-around; /* Align sections evenly */
+            height: 100vh; /* Fill the whole screen */
+            padding: 20px;
+        }
+
+        .column {
+            flex-basis: 30%; /* Each column takes 30% of container width */
+        }
+
+        h1 {
+            color: #000; /* Set heading color to black */
+            padding-left:120px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #F7CE4D; /* Set button background color */
+            border: none;
+            border-radius: 3px;
+            color: black; /* Set button font color */
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: white; /* Change button color on hover */
+        }
+
+        .section {
+            overflow-y: auto; /* Enable scrolling if content exceeds container height */
+            height: 70vh; /* Set fixed height for each section */
+            margin-bottom: 20px; /* Add space between sections */
+        }
+
+        .active {
+            display: block; /* Show when active */
+        }
+
+        .inactive {
+            display: none; /* Hide when inactive */
+        }
+        #buddiesList li,.chat-header{
+			display:flex;
+			flex-direction:row;
+			width:300px;
+			align-items:center;
+			column-gap:20px;
+			text-align:left;
+			margin-bottom:10px;
+		}
+    </style>
+</head>
+<body>
+                <h1>Buddies</h1>
+    <div class="container">
+        <div class="column">
+            <div class="section active" id="buddiesSection">
+                <ul id="buddiesList">
+                    <li>
+						 <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/chat_avatar_10.jpg" alt="avatar" />
+						  <div class="about">
+							<div class="name">Onyeabor Sophia</div>
+							<div class="status">
+							  <i class="fa fa-circle online"></i> online
+							</div>
+						  </div>
+                    </li>
+                    
+        <li class="clearfix">
+          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/chat_avatar_02.jpg" alt="avatar" />
+          <div class="about">
+            <div class="name">Agnes Eze</div>
+            <div class="status">
+              <i class="fa fa-circle offline"></i> left 7 mins ago
+            </div>
+          </div>
+        </li>
+        
+        <li class="clearfix">
+          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/chat_avatar_03.jpg" alt="avatar" />
+          <div class="about">
+            <div class="name">Mike Thomas</div>
+            <div class="status">
+              <i class="fa fa-circle online"></i> online
+            </div>
+          </div>
+        </li>
+        
+        <li class="clearfix">
+          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/chat_avatar_04.jpg" alt="avatar" />
+          <div class="about">
+            <div class="name">Erica Obi</div>
+            <div class="status">
+              <i class="fa fa-circle online"></i> online
+            </div>
+          </div>
+        </li>
+        
+        <li class="clearfix">
+          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/chat_avatar_05.jpg" alt="avatar" />
+          <div class="about">
+            <div class="name">Ginger Johnston</div>
+            <div class="status">
+              <i class="fa fa-circle online"></i> online
+            </div>
+          </div>
+        </li>
+        
+        <li class="clearfix">
+          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/chat_avatar_06.jpg" alt="avatar" />
+          <div class="about">
+            <div class="name">Tracy Carpenter</div>
+            <div class="status">
+              <i class="fa fa-circle offline"></i> left 30 mins ago
+            </div>
+          </div>
+        </li>
+        
+        <li class="clearfix">
+          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/chat_avatar_07.jpg" alt="avatar" />
+          <div class="about">
+            <div class="name">Christian Asiwaju</div>
+            <div class="status">
+              <i class="fa fa-circle offline"></i> left 10 hours ago
+            </div>
+          </div>
+        </li>
+        
+        <li class="clearfix">
+          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/chat_avatar_08.jpg" alt="avatar" />
+          <div class="about">
+            <div class="name">Monica Tolu</div>
+            <div class="status">
+              <i class="fa fa-circle online"></i> online
+            </div>
+          </div>
+        </li>
+        
+        <li class="clearfix">
+          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/chat_avatar_09.jpg" alt="avatar" />
+          <div class="about">
+            <div class="name">Bolu Tife</div>
+            <div class="status">
+              <i class="fa fa-circle offline"></i> offline since Oct 28
+            </div>
+          </div>
+        </li>
+        
+        <li class="clearfix">
+          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/chat_avatar_01.jpg" alt="avatar" />
+          <div class="about">
+            <div class="name">David Ade</div>
+            <div class="status">
+              <i class="fa fa-circle online"></i> online
+            </div>
+          </div>
+        </li>
+                    <!-- Add more buddies as needed -->
+                </ul>
+            </div>
+        </div>
+
+    <div class="chat">
+      <div class="chat-header clearfix">
+        <img  id="chat-with-image" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/chat_avatar_10.jpg" alt="avatar" />
+        
+        <div class="chat-about">
+          <div id="chat-with-user" class="chat-with">Onyeabor Sophia</div>
+          <div class="chat-num-messages">already 2 messages</div>
+        </div>
+        <i class="fa fa-star"></i>
+      </div> <!-- end chat-header -->
+      
+      <div class="chat-history">
+        <ul>
+          <li class="clearfix">
+            <div class="message-data align-right">
+              <span class="message-data-time" >10:10 AM, Today</span> &nbsp; &nbsp;
+              <span class="message-data-name" >Olia</span> <i class="fa fa-circle me"></i>
+              
+            </div>
+            <div class="message other-message float-right">
+              Hi Sophia, how are you? 
+            </div>
+          </li>
+          
+          <li>
+            <div class="message-data">
+              <span class="message-data-name"><i class="fa fa-circle online"></i> Sophia </span>
+              <span class="message-data-time">10:12 AM, Today</span>
+            </div>
+            <div class="message my-message">
+              I am well. Great to meet you on Buddie.
+            </div>
+          </li>
+          
+          <li class="clearfix">
+            <div class="message-data align-right">
+              <span class="message-data-time" >10:14 AM, Today</span> &nbsp; &nbsp;
+              <span class="message-data-name" >Olia</span> <i class="fa fa-circle me"></i>
+              
+            </div>
+            <div class="message other-message float-right">
+              Ikr I always see you around in Surulere Mall and i found you on Buddie
+            </div>
+          </li>
+          
+          <li>
+            <div class="message-data">
+              <span class="message-data-name"><i class="fa fa-circle online"></i> Sophia</span>
+              <span class="message-data-time">10:20 AM, Today</span>
+            </div>
+            <div class="message my-message">
+              Actually I'm very excited to meet you here too.
+            </div>
+          </li>
+          
+          <li>
+            <div class="message-data">
+              <span class="message-data-name"><i class="fa fa-circle online"></i> Sophia</span>
+              <span class="message-data-time">10:31 AM, Today</span>
+            </div>
+            <i class="fa fa-circle online"></i>
+            <i class="fa fa-circle online" style="color: #AED2A6"></i>
+            <i class="fa fa-circle online" style="color:#DAE9DA"></i>
+          </li>
+          
+        </ul>
+        
+      </div> <!-- end chat-history -->
+      
+      <div class="chat-message clearfix">
+        <textarea style="display:flex;flex:1;width:100%" name="message-to-send" id="message-to-send" placeholder ="Type your message" rows="3"></textarea>
+                
+        <i class="fa fa-file-o"></i> &nbsp;&nbsp;&nbsp;
+        <i class="fa fa-file-image-o"></i>
+        
+        <button>Send</button>
+
+      </div> <!-- end chat-message -->
+      
+    </div> <!-- end chat -->
+    
+        
+    </div>
+
+    <script>
+        function openChat(buddy) {
+            // Replace this with code to open chat window with the selected buddy
+            alert('Opening chat with ' + buddy);
+        }
+
+        function WithdrawRequest(buddy) {
+            // Replace this with code to withdraw the request for the selected buddy
+            alert('Withdrawing request for ' + buddy);
+        }
+
+        function AcceptRequest(buddy) {
+            // Replace this with code to accept the request from the selected buddy
+            alert('Accepting request from ' + buddy);
+        }
+
+        function toggleSection(section) {
+            // Hide all sections
+            document.querySelectorAll('.section').forEach((s) => {
+                s.classList.remove('active');
+                s.classList.add('inactive');
+            });
+
+            // Show the selected section
+            document.getElementById(section + 'Section').classList.add('active');
+        }
+        function load(){
+			console.log("hey")
+         document.querySelectorAll('#buddiesList > li').forEach((s) => {
+                s.addEventListener('click',function(e){
+						document.getElementById("chat-with-user").innerText=s.getElementsByClassName('name')[0].innerText,
+						document.getElementById("chat-with-image").src=s.getElementsByTagName('img')[0].src
+					
+				})
+            });
+		}
+		load();
+    </script>
+</body>
+</html>
